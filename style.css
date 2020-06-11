@@ -1,0 +1,95 @@
+header { 
+    display: flex;
+    justify-content: space-around; 
+    color: white;
+    letter-spacing: 2px; 
+    word-spacing: 8px; 
+    height: 90px;
+    background-color: rgb(116, 0, 11);     
+    padding: 0px 0 20px 0;
+}
+
+body {
+    color: white;
+    letter-spacing: 1px;
+    font-family: 'Salsa'; font-size: 22px;
+    background-color: black;
+    width: 1200px;
+    margin: 0 auto;
+    border: 1px #ccc solid;
+}
+
+.inputSection {
+    display: flex;
+    justify-content: space-around;
+}
+
+.formContainer {  
+    margin: 10px 10px 10px 10px;
+    border: 1px #ccc solid;
+    padding: 10px 10px 10px 10px;
+    width: 400px;   
+}
+
+form {  
+    margin-bottom: 10px;  
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.formDiv {
+    margin-bottom: 100px; 
+}
+
+#save_btn {
+    width: 115px;
+    height: 37px;
+    
+}
+
+.previewContainer {       
+    z-index: -2;
+    background-color: rgb(194, 192, 192);     
+    width: 600px; 
+    height: auto; 
+    display: flex;
+    align-content: flex-start;
+    flex-direction: column;
+    margin: 10px 10px 10px 10px;   
+}
+
+
+.newImg {    
+    z-index: -2;
+    max-width: 100%;    
+    object-fit: contain;
+    display: block;
+}
+
+.top {    
+    width: inherit;
+    color: white;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px 10px 10px 10px;
+    position: absolute; 
+    text-align: center;      
+}
+
+.bottom {    
+    width: inherit;
+    color: white;
+    font-size: 40px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px 10px 10px 10px;  
+    position: relative;  
+    bottom: 10px;  
+    text-align: center;      
+}
+
+.savedSection {
+    width: 100%;
+    height: auto;   
+}

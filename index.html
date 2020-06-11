@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Salsa' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meme Generator 2.0</title>
+</head>
+
+<body>
+    <header>
+        <h1>Meme Generator 2.0</h1>
+    </header>
+    <section class="inputSection">
+        <div class="formContainer">
+            <form>
+                <div class="formDiv">
+                    <span class="label"><label for="img_id">Image url: </label></span>
+                    <span><input type="file" name="imgInput"></span>
+                    <span><button type="submit" id="img_btn">Submit</button></span>
+                </div>
+                <div class="formDiv">
+                    <span class="label"><label for="topTextInput">Top Text: </label></span>
+                    <span><input type="text" name="topTextInput"></span>
+                    <span><button type="submit" id="topText_btn">Submit</button></span>
+                </div>
+                <div class="formDiv">
+                    <span class="label"><label for="bottomTextInput">Bottom Text: </label></span>
+                    <span><input type="text" name="bottomTextInput"></span>
+                    <span><button type="submit" id="bottomText_btn">Submit</button></span>
+                </div>
+                <div class="saveBtnDiv" id="saveBtn_ID">
+                    <button type="submit" id="save_btn">Save</button>
+                </div>
+            </form>
+        </div>
+        <div class="previewContainer" id="previewDiv">
+
+        </div>
+    </section>
+    <section class="savedSection">
+
+
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
