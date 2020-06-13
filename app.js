@@ -4,7 +4,7 @@
 // const bottomTextInput = document.querySelector('input[name="bottomTextInput"]');
 // const topText_btn = document.getElementById('topText_btn');
 // const bottomText_btn = document.getElementById('bottomText_btn');
-let previewDiv, form, topText_btn, topTextInput, bottomText_btn, bottomTextInput;
+let previewDiv, form, topText_btn, topTextInput, bottomText_btn, bottomTextInput, imgInput;
 
 // document.getElementById('img_btn').onclick = function (e) {
 //     e.preventDefault();
@@ -34,19 +34,48 @@ let previewDiv, form, topText_btn, topTextInput, bottomText_btn, bottomTextInput
 
 function init() {
     form = document.querySelector('form');
+    previewDiv = document.getElementById('previewDiv');
+    const topTextInput = document.querySelector('input[name="topTextInput"]');
+    const bottomTextInput = document.querySelector('input[name="bottomTextInput"]');
+    const topText_btn = document.getElementById('topText_btn');
+    const bottomText_btn = document.getElementById('bottomText_btn');
+    imgInput = document.querySelector('input[name="imgInput"]');
+
     form.addEventListener('submit', function(e){
         e.preventDefault();
         const target = e.target;   
         
         let reader = new FileReader();
+        reader.onload = function(){
+            let img = new Image;
+            img.src = reader.result;
+            reader.readAsDataURL();
+            
+            
+        }
+        
+        
 
 
-
-        console.log(e);
+        
 
     });
 }
 
+function previewImage(img){      
+    previewDiv.width = img.width;
+    previewDiv.height = img.height;
+
+    addImage.addEventListener('click', function(e){
+      e.preventDefault();
+
+      previewDiv.appendChild('img');
+    });
+    
+    
+   
+    
+}
 
 
 init();
