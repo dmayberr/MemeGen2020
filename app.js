@@ -1,81 +1,72 @@
-// const previewDiv = document.getElementById('previewDiv');
-// const form = document.querySelector('form');
-// const topTextInput = document.querySelector('input[name="topTextInput"]');
-// const bottomTextInput = document.querySelector('input[name="bottomTextInput"]');
-// const topText_btn = document.getElementById('topText_btn');
-// const bottomText_btn = document.getElementById('bottomText_btn');
-let previewDiv, form, topText_btn, topTextInput, bottomText_btn, bottomTextInput, imgInput;
+const previewDiv = document.getElementById('previewDiv');
+const form = document.querySelector('form');
+const topTextInput = document.querySelector('input[name="topTextInput"]');
+const bottomTextInput = document.querySelector('input[name="bottomTextInput"]');
+const topText_btn = document.getElementById('topText_btn');
+const bottomText_btn = document.getElementById('bottomText_btn');
+const bottomTextSize = document.getElementById('bottom-text-size');
+const topTextSize = document.getElementById('top-text-size');
 
-// document.getElementById('img_btn').onclick = function (e) {
-//     e.preventDefault();
-//     const imgInput = document.querySelector('input[name="imgInput"]');
-//     let newImg = new Image();
-//     newImg.setAttribute('class', 'newImg');    
-//     newImg.src = imgInput.value;  
-//     previewDiv.appendChild(newImg); 
-//     previewDiv.style.height = 0;     
-// }
+bottomTextSize.addEventListener('input', function(){
+    let bottom = document.querySelector('.bottom');
+    bottom.style["font-size"] = this.value + "px";
+});
 
-// document.getElementById('topText_btn').onclick = function (e) {
-//     e.preventDefault();
-//     let topImgText = document.createElement('div');
-//     topImgText.setAttribute('class', 'top');
-//     topImgText.innerText = topTextInput.value;
-//     previewDiv.appendChild(topImgText);
-// }
+topTextSize.addEventListener('input', function(){
+    let top = document.querySelector('.top');
+    top.style["font-size"] = this.value + "px";
+});
 
-// document.getElementById('bottomText_btn').onclick = function (e) {
-//     e.preventDefault();
-//     let bottomImgText = document.createElement('div');
-//     bottomImgText.setAttribute('class', 'bottom');
-//     bottomImgText.innerText = bottomTextInput.value;
-//     previewDiv.appendChild(bottomImgText);
-// }
+document.getElementById('img_btn').onclick = function (e) {
+    e.preventDefault();
+    
+    
+    const imgInput = document.querySelector('input[name="imgInput"]').files[0];
+    let newImg = new Image(); 
+    const reader = new FileReader();
+    reader.onload = function(e){
+        newImg.src = e.target.result;
+        previewDiv.appendChild(newImg);
+        previewDiv.height = newImg.height;
+    }
+    reader.readAsDataURL(imgInput);
+    
+    
+    console.log("A");  
 
-function init() {
-    form = document.querySelector('form');
-    previewDiv = document.getElementById('previewDiv');
-    const topTextInput = document.querySelector('input[name="topTextInput"]');
-    const bottomTextInput = document.querySelector('input[name="bottomTextInput"]');
-    const topText_btn = document.getElementById('topText_btn');
-    const bottomText_btn = document.getElementById('bottomText_btn');
-    imgInput = document.querySelector('input[name="imgInput"]');
 
-    form.addEventListener('submit', function(e){
+    
+       
+}
+
+document.getElementById('topText_btn').onclick = function (e) {
+    e.preventDefault();
+    let topImgText = document.createElement('div');
+    topImgText.setAttribute('class', 'top');
+    topImgText.innerText = topTextInput.value;
+    previewDiv.appendChild(topImgText);
+}
+
+document.getElementById('bottomText_btn').onclick = function (e) {
+    e.preventDefault();
+    let bottomImgText = document.createElement('div');
+    bottomImgText.setAttribute('class', 'bottom');
+    bottomImgText.innerText = bottomTextInput.value;
+    previewDiv.appendChild(bottomImgText);
+}
+
+function loadImage(){
+    const preview = document.querySelector('img');
+    const reader = new FileReader();
+    
+
+    reader.addEventListener('load', function(e){
         e.preventDefault();
-        const target = e.target;   
+
+        preview.src = reader.result;
         
-        let reader = new FileReader();
-        reader.onload = function(){
-            let img = new Image;
-            img.src = reader.result;
-            reader.readAsDataURL();
-            
-            
+        if(file){
+            reader.readAsDataURL(imgInput);
         }
-        
-        
-
-
-        
-
     });
 }
-
-function previewImage(img){      
-    previewDiv.width = img.width;
-    previewDiv.height = img.height;
-
-    addImage.addEventListener('click', function(e){
-      e.preventDefault();
-
-      previewDiv.appendChild('img');
-    });
-    
-    
-   
-    
-}
-
-
-init();

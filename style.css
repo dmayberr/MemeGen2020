@@ -28,19 +28,21 @@ body {
     margin: 10px 10px 10px 10px;
     border: 1px #ccc solid;
     padding: 10px 10px 10px 10px;
-    width: 400px;   
+    width: 500px;   
 }
 
 form {  
     margin-bottom: 10px;  
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: flex-end;
+    
 }
 
 .formDiv {
     margin-bottom: 100px; 
+    width: 100%;
 }
 
 #save_btn {
@@ -49,7 +51,8 @@ form {
     
 }
 
-.previewContainer {       
+.previewContainer {   
+    position: relative;    
     z-index: -2;
     background-color: rgb(194, 192, 192);     
     width: 600px; 
@@ -57,12 +60,13 @@ form {
     display: flex;
     align-content: flex-start;
     flex-direction: column;
-    margin: 10px 10px 10px 10px;   
+    margin: 10px 10px 10px 10px; 
+      
 }
 
 
 .newImg {    
-    z-index: -2;
+    z-index: -1;
     max-width: 100%;    
     object-fit: contain;
     display: block;
@@ -80,12 +84,12 @@ form {
 
 .bottom {    
     width: inherit;
+    height: inherit;
     color: white;
     font-size: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    padding: 10px 10px 10px 10px;  
-    position: relative;  
-    bottom: 10px;  
+    position: absolute;  
+    bottom: 0;
     text-align: center;      
 }
 
