@@ -30,12 +30,6 @@ document.getElementById('img_btn').onclick = function (e) {
         previewDiv.height = newImg.height;
     }
     reader.readAsDataURL(imgInput);
-    
-    
-    console.log("A");  
-
-
-    
        
 }
 
@@ -71,5 +65,7 @@ document.querySelector('form').onsubmit = function (e) {
     const savedSection = document.querySelector('.savedSection');
     savedSection.append(newMeme);
 
-    previewDiv.innerHTML = '';
+    previewDiv.innerHTML = '';    
+    form.reset();
+
 }
