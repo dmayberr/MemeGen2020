@@ -63,6 +63,7 @@ document.querySelector('form').onsubmit = function (e) {
     const meme = previewDiv.innerHTML;
 
     const newMeme = document.createElement('div');
+    newMeme.setAttribute('class', 'previewContainer');
     newMeme.style.maxWidth = "600px";
     newMeme.style.maxHeight = "auto";
     newMeme.innerHTML = meme;
