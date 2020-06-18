@@ -55,18 +55,20 @@ document.getElementById('bottomText_btn').onclick = function (e) {
     previewDiv.appendChild(bottomImgText);
 }
 
-function loadImage(){
-    const preview = document.querySelector('img');
-    const reader = new FileReader();
-    
 
-    reader.addEventListener('load', function(e){
-        e.preventDefault();
 
-        preview.src = reader.result;
-        
-        if(file){
-            reader.readAsDataURL(imgInput);
-        }
-    });
+document.querySelector('form').onsubmit = function (e) {
+    e.preventDefault();
+
+    const meme = previewDiv.innerHTML;
+
+    const newMeme = document.createElement('div');
+    newMeme.style.maxWidth = "600px";
+    newMeme.style.maxHeight = "auto";
+    newMeme.innerHTML = meme;
+
+    const savedSection = document.querySelector('.savedSection');
+    savedSection.append(newMeme);
+
+    previewDiv.innerHTML = '';
 }
