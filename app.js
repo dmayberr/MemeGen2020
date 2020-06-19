@@ -58,14 +58,30 @@ document.querySelector('form').onsubmit = function (e) {
 
     const newMeme = document.createElement('div');
     newMeme.setAttribute('class', 'previewContainer');
+    newMeme.setAttribute('id', 'this-meme')
     newMeme.style.maxWidth = "600px";
     newMeme.style.maxHeight = "auto";
     newMeme.innerHTML = meme;
 
     const savedSection = document.querySelector('.savedSection');
-    savedSection.append(newMeme);
+    savedSection.append(newMeme); 
+    const removeBtn = document.createElement('button');
+    removeBtn.innerText = 'Remove Meme';
+  
+    newMeme.append(removeBtn);
 
+    removeBtn.onclick = function(){
+        let thisMeme = document.querySelector('#this-meme');
+        thisMeme.innerHTML = '';
+    }
+    
     previewDiv.innerHTML = '';    
     form.reset();
-
 }
+
+
+
+
+    
+    
+
