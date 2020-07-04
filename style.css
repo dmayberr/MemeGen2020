@@ -79,7 +79,9 @@ form {
     font-family: Georgia, 'Times New Roman', Times, serif;
     padding: 10px 10px 10px 10px;
     position: absolute; 
-    text-align: center;      
+    text-align: center;  
+    -webkit-text-stroke-width: 1px;  
+    -webkit-text-stroke-color: black;  
 }
 
 .bottom {    
@@ -90,7 +92,9 @@ form {
     font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute;  
     bottom: 0;
-    text-align: center;      
+    text-align: center; 
+    -webkit-text-stroke-width: 1px;  
+    -webkit-text-stroke-color: black;       
 }
 
 .savedSection {

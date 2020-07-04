@@ -6,16 +6,30 @@ const topText_btn = document.getElementById('topText_btn');
 const bottomText_btn = document.getElementById('bottomText_btn');
 const bottomTextSize = document.getElementById('bottom-text-size');
 const topTextSize = document.getElementById('top-text-size');
+const topTextColor = document.getElementById('top-color');
+const bottomTextColor = document.getElementById('btm-color');
 
 bottomTextSize.addEventListener('input', function(){
     let bottom = document.querySelector('.bottom');
     bottom.style["font-size"] = this.value + "px";
 });
 
+bottomTextColor.addEventListener('change', function(){
+    let btmColor = document.querySelector('.bottom');
+    btmColor.style['color'] = this.value;
+});
+
 topTextSize.addEventListener('input', function(){
     let top = document.querySelector('.top');
     top.style["font-size"] = this.value + "px";
 });
+
+topTextColor.addEventListener('change', function(){
+    let topColor = document.querySelector('.top');
+    topColor.style['color'] = this.value;
+});
+
+
 
 document.getElementById('img_btn').onclick = function (e) {
     e.preventDefault();
