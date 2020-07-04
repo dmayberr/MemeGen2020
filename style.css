@@ -97,6 +97,12 @@ form {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: auto;   
+    height: auto; 
+
+
+}
+
+#remove-btn {
+    height: 50px;    
 }
 

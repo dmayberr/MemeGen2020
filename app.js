@@ -66,13 +66,17 @@ document.querySelector('form').onsubmit = function (e) {
     const savedSection = document.querySelector('.savedSection');
     savedSection.append(newMeme); 
     const removeBtn = document.createElement('button');
+    removeBtn.setAttribute('id', 'remove-btn');
     removeBtn.innerText = 'Remove Meme';
+    
   
-    newMeme.append(removeBtn);
+    savedSection.append(removeBtn);
 
     removeBtn.onclick = function(){
         let thisMeme = document.querySelector('#this-meme');
-        thisMeme.innerHTML = '';
+        thisMeme.remove();
+        let thisBtn = document.querySelector('#remove-btn');
+        thisBtn.remove();
     }
     
     previewDiv.innerHTML = '';    
